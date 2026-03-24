@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "email-automation-demo"
+version = "0.1.0"
+description = "Interview demo for golden-record event reporting and morning email automation."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "fpdf2>=2.8,<3",
+]
+
+[tool.setuptools]
+packages = ["email_automation"]

@@ -1,0 +1,21 @@
+acct_id,price_level,plan_event_name,num_seats,plan_type,section_type,number_of_events,full_season_equivalence,ticket_price,revenue
+A1001,Premium Glass,2026-03-19 | Bruins vs Rangers,2,Full Season,Premium,41,2.00,425,850
+A1002,Club Center,2026-03-19 | Bruins vs Rangers,4,Half Season,Club,20,1.95,260,1040
+A1003,Loge Attack,2026-03-19 | Bruins vs Rangers,2,10-Game,Lower Bowl,10,0.49,190,380
+A1004,Balcony Center,2026-03-19 | Bruins vs Rangers,4,Full Season,Upper Bowl,41,4.00,95,380
+A1005,Balcony Corner,2026-03-19 | Bruins vs Rangers,6,Group,Upper Bowl,1,0.15,78,468
+A1006,Club Sideline,2026-03-19 | Bruins vs Rangers,2,Premium Membership,Club,41,2.00,315,630
+A1007,Suite Lease,2026-03-19 | Bruins vs Rangers,12,Suite,Premium,41,12.00,450,5400
+A1008,Loge Corner,2026-03-19 | Bruins vs Rangers,4,Mini Plan,Lower Bowl,5,0.49,165,660
+A1009,Balcony Center,2026-03-19 | Bruins vs Rangers,2,Student Rush,Upper Bowl,1,0.05,65,130
+A1010,Club Corner,2026-03-19 | Bruins vs Rangers,2,10-Game,Club,10,0.49,210,420
+A1101,Premium Glass,2026-03-21 | Bruins vs Canadiens,2,Full Season,Premium,41,2.00,395,790
+A1102,Club Center,2026-03-21 | Bruins vs Canadiens,4,Half Season,Club,20,1.95,245,980
+A1103,Loge Attack,2026-03-21 | Bruins vs Canadiens,2,10-Game,Lower Bowl,10,0.49,180,360
+A1104,Balcony Center,2026-03-21 | Bruins vs Canadiens,4,Full Season,Upper Bowl,41,4.00,90,360
+A1105,Balcony Corner,2026-03-21 | Bruins vs Canadiens,8,Group,Upper Bowl,1,0.20,72,576
+A1106,Club Sideline,2026-03-21 | Bruins vs Canadiens,2,Premium Membership,Club,41,2.00,295,590
+A1107,Suite Lease,2026-03-21 | Bruins vs Canadiens,10,Suite,Premium,41,10.00,430,4300
+A1108,Loge Corner,2026-03-21 | Bruins vs Canadiens,4,Mini Plan,Lower Bowl,5,0.49,155,620
+A1109,Balcony Center,2026-03-21 | Bruins vs Canadiens,2,Student Rush,Upper Bowl,1,0.05,60,120
+A1110,Club Corner,2026-03-21 | Bruins vs Canadiens,2,10-Game,Club,10,0.49,205,410

@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executive Event Truth Attachment</title>
+  <style>
+    @page {
+      size: Letter;
+      margin: 0.55in;
+    }
+    :root {
+      --bg: #ebe7de;
+      --page: #fffdfa;
+      --panel: #f8f3e7;
+      --ink: #1d1a15;
+      --muted: #655e52;
+      --accent: #a88321;
+      --accent-soft: #efe1b8;
+      --line: #d8ccb2;
+      --good: #2f6240;
+      --shadow: 0 16px 36px rgba(29, 26, 21, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f0ece4 0%, #e8e2d6 100%);
+    }
+    .page {
+      width: min(980px, calc(100% - 24px));
+      margin: 24px auto 36px;
+      background: var(--page);
+      border: 1px solid rgba(216, 204, 178, 0.92);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      border-top: 8px solid var(--accent);
+      padding-top: 12px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.04;
+    }
+    .hero-subhead {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .hero-copy {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0;
+    }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e7f1e9;
+      color: var(--good);
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .meta-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .meta-card {
+      background: var(--panel);
+      border: 1px solid rgba(216, 204, 178, 0.92);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .meta-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+    .meta-value {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .section {
+      margin-top: 18px;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid rgba(216, 204, 178, 0.92);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .metric-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), #d4bb70);
+    }
+    .metric-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .metric-value {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .metric-note {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(216, 204, 178, 0.92);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+    }
+    .panel-copy {
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0 0 14px;
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .source-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(168, 131, 33, 0.16), rgba(168, 131, 33, 0.08));
+      border: 1px solid rgba(168, 131, 33, 0.24);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .meta-grid, .metrics-grid, .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 12px, 980px);
+      }
+      .page, .panel, .metric-card, .meta-card {
+        border-radius: 18px;
+        padding: 16px;
+      }
+      .hero-subhead {
+        align-items: start;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        width: auto;
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+        <div class="eyebrow">Executive Event Truth Attachment</div>
+        <h1>2026-03-19 | Bruins vs Rangers</h1>
+        <div class="hero-subhead">
+          <p class="hero-copy">
+            This attachment reflects the locked morning event file and should be treated as the source of truth for post-event ticket reporting.
+          </p>
+          <div class="status-chip">Final</div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-card">
+            <div class="meta-label">Prepared</div>
+            <div class="meta-value">March 23, 2026 at 05:58 PM</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Event Status</div>
+            <div class="meta-value">Final</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Data Scope</div>
+            <div class="meta-value">Ticket plans, seat volume, package mix, price levels, and locked event revenue.</div>
+          </div>
+        </div>
+    </section>
+
+    <section class="section metrics-grid">
+      
+    <div class="metric-card">
+      <div class="metric-label">Accounts</div>
+      <div class="metric-value">10</div>
+      <div class="metric-note">Unique accounts represented in the event file</div>
+    </div>
+    
+    <div class="metric-card">
+      <div class="metric-label">Seats</div>
+      <div class="metric-value">40</div>
+      <div class="metric-note">Seat total from the reconciled morning file</div>
+    </div>
+    
+    <div class="metric-card">
+      <div class="metric-label">Revenue</div>
+      <div class="metric-value">$10,358.00</div>
+      <div class="metric-note">Locked ticket revenue for the shared morning readout</div>
+    </div>
+    
+    <div class="metric-card">
+      <div class="metric-label">Avg Ticket</div>
+      <div class="metric-value">$258.95</div>
+      <div class="metric-note">Revenue divided by seats</div>
+    </div>
+    
+    <div class="metric-card">
+      <div class="metric-label">Full Season Eq.</div>
+      <div class="metric-value">23.62</div>
+      <div class="metric-note">Plan volume converted into a common season-equivalent lens</div>
+    </div>
+    
+    <div class="metric-card">
+      <div class="metric-label">Avg Package Length</div>
+      <div class="metric-value">24.2</div>
+      <div class="metric-note">Average number of events weighted by seats</div>
+    </div>
+    
+    </section>
+
+    <section class="section content-grid">
+      <div class="panel">
+        <h2>Executive Readout</h2>
+        <p class="panel-copy">
+          These are the most important locked takeaways from the event-level file.
+        </p>
+        <ul class="bullet-list"><li>Locked revenue is $10,358.00 across 40 seats from 10 unique accounts.</li><li>Top plan type by revenue: Suite. Top section type by revenue: Premium.</li><li>Leading price level by revenue: Suite Lease. Weighted average ticket price is $258.95.</li><li>Total full-season equivalence is 23.62, and average package length is 24.2 events.</li></ul>
+      </div>
+      <div class="panel">
+        <h2>Source Of Truth Status</h2>
+        <p class="panel-copy">
+          These checks describe the integrity of the locked morning file behind the attachment.
+        </p>
+        <ul class="bullet-list"><li>Rows processed: 10</li><li>Required column coverage: 100%</li><li>Revenue mismatches: 0</li><li>Missing required values: 0</li></ul>
+      </div>
+    </section>
+
+    <div class="section table-wrap">
+      
+    <section class="panel">
+      <h2>Plan Mix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Accounts</th>
+            <th>Seats</th>
+            <th>Revenue</th>
+            <th>Avg Ticket</th>
+            <th>Rev Share</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Suite</td>
+          <td>1</td>
+          <td>12</td>
+          <td>$5,400.00</td>
+          <td>$450.00</td>
+          <td>52.1%</td>
+        </tr>
+        
+        <tr>
+          <td>Full Season</td>
+          <td>2</td>
+          <td>6</td>
+          <td>$1,230.00</td>
+          <td>$205.00</td>
+          <td>11.9%</td>
+        </tr>
+        
+        <tr>
+          <td>Half Season</td>
+          <td>1</td>
+          <td>4</td>
+          <td>$1,040.00</td>
+          <td>$260.00</td>
+          <td>10.0%</td>
+        </tr>
+        
+        <tr>
+          <td>10-Game</td>
+          <td>2</td>
+          <td>4</td>
+          <td>$800.00</td>
+          <td>$200.00</td>
+          <td>7.7%</td>
+        </tr>
+        
+        <tr>
+          <td>Mini Plan</td>
+          <td>1</td>
+          <td>4</td>
+          <td>$660.00</td>
+          <td>$165.00</td>
+          <td>6.4%</td>
+        </tr>
+        
+        <tr>
+          <td>Premium Membership</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$630.00</td>
+          <td>$315.00</td>
+          <td>6.1%</td>
+        </tr>
+        
+        <tr>
+          <td>Group</td>
+          <td>1</td>
+          <td>6</td>
+          <td>$468.00</td>
+          <td>$78.00</td>
+          <td>4.5%</td>
+        </tr>
+        
+        <tr>
+          <td>Student Rush</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$130.00</td>
+          <td>$65.00</td>
+          <td>1.3%</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    </div>
+    <div class="section table-wrap">
+      
+    <section class="panel">
+      <h2>Section Mix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Accounts</th>
+            <th>Seats</th>
+            <th>Revenue</th>
+            <th>Avg Ticket</th>
+            <th>Rev Share</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Premium</td>
+          <td>2</td>
+          <td>14</td>
+          <td>$6,250.00</td>
+          <td>$446.43</td>
+          <td>60.3%</td>
+        </tr>
+        
+        <tr>
+          <td>Club</td>
+          <td>3</td>
+          <td>8</td>
+          <td>$2,090.00</td>
+          <td>$261.25</td>
+          <td>20.2%</td>
+        </tr>
+        
+        <tr>
+          <td>Lower Bowl</td>
+          <td>2</td>
+          <td>6</td>
+          <td>$1,040.00</td>
+          <td>$173.33</td>
+          <td>10.0%</td>
+        </tr>
+        
+        <tr>
+          <td>Upper Bowl</td>
+          <td>3</td>
+          <td>12</td>
+          <td>$978.00</td>
+          <td>$81.50</td>
+          <td>9.4%</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    </div>
+    <div class="section table-wrap">
+      
+    <section class="panel">
+      <h2>Price Level Mix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Accounts</th>
+            <th>Seats</th>
+            <th>Revenue</th>
+            <th>Avg Ticket</th>
+            <th>Rev Share</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Suite Lease</td>
+          <td>1</td>
+          <td>12</td>
+          <td>$5,400.00</td>
+          <td>$450.00</td>
+          <td>52.1%</td>
+        </tr>
+        
+        <tr>
+          <td>Club Center</td>
+          <td>1</td>
+          <td>4</td>
+          <td>$1,040.00</td>
+          <td>$260.00</td>
+          <td>10.0%</td>
+        </tr>
+        
+        <tr>
+          <td>Premium Glass</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$850.00</td>
+          <td>$425.00</td>
+          <td>8.2%</td>
+        </tr>
+        
+        <tr>
+          <td>Loge Corner</td>
+          <td>1</td>
+          <td>4</td>
+          <td>$660.00</td>
+          <td>$165.00</td>
+          <td>6.4%</td>
+        </tr>
+        
+        <tr>
+          <td>Club Sideline</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$630.00</td>
+          <td>$315.00</td>
+          <td>6.1%</td>
+        </tr>
+        
+        <tr>
+          <td>Balcony Center</td>
+          <td>2</td>
+          <td>6</td>
+          <td>$510.00</td>
+          <td>$85.00</td>
+          <td>4.9%</td>
+        </tr>
+        
+        <tr>
+          <td>Balcony Corner</td>
+          <td>1</td>
+          <td>6</td>
+          <td>$468.00</td>
+          <td>$78.00</td>
+          <td>4.5%</td>
+        </tr>
+        
+        <tr>
+          <td>Club Corner</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$420.00</td>
+          <td>$210.00</td>
+          <td>4.1%</td>
+        </tr>
+        
+        <tr>
+          <td>Loge Attack</td>
+          <td>1</td>
+          <td>2</td>
+          <td>$380.00</td>
+          <td>$190.00</td>
+          <td>3.7%</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    </div>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Source Of Truth Statement</h2>
+        <div class="source-note">
+          This attachment is intended to be the single shared view of post-event ticket performance. If downstream views differ from this file,
+          this attachment should be treated as the locked baseline while any variance is reconciled.
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+    

@@ -1,0 +1,43 @@
+{
+  "report_name": "Bruins Morning Event Truth Report",
+  "sender_name": "Bruins Revenue Strategy Automation",
+  "sender_email": "event.reporting@bruins-demo.local",
+  "reply_to": "ticketing.analytics@bruins-demo.local",
+  "distribution_owner": "Business Intelligence + Ticketing Operations",
+  "latest_source_refresh": "6:00 AM ET",
+  "final_lock_time": "6:10 AM ET",
+  "demo_note": "This demo shows how one reconciled event record can be distributed to the right groups with explicit timing and status rules.",
+  "audiences": [
+    {
+      "name": "Executive Morning Digest",
+      "purpose": "Shared topline readout for leadership before the first meetings of the day.",
+      "to": [
+        "bruins.executive.leadership@bruins-demo.local"
+      ],
+      "cc": [
+        "ticketing.leadership@bruins-demo.local",
+        "finance.operations@bruins-demo.local"
+      ],
+      "send_time_local": "6:15 AM",
+      "timezone": "America/New_York",
+      "status_gate": "Send only after the event file is reconciled. If a source is late, label the report Preliminary and trigger a 9:00 AM refresh.",
+      "cadence": "Every Bruins home event morning"
+    },
+    {
+      "name": "Revenue And Operations Detail",
+      "purpose": "More detailed follow-up for ticketing, finance, and arena operations leads.",
+      "to": [
+        "ticketing.analytics@bruins-demo.local",
+        "finance.reporting@bruins-demo.local",
+        "arena.operations@bruins-demo.local"
+      ],
+      "cc": [
+        "crm.marketing@bruins-demo.local"
+      ],
+      "send_time_local": "6:30 AM",
+      "timezone": "America/New_York",
+      "status_gate": "Release after the executive digest with the same locked numbers and a fuller breakdown by plan, section, and price level.",
+      "cadence": "Every Bruins home event morning"
+    }
+  ]
+}

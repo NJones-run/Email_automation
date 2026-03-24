@@ -1,0 +1,213 @@
+{
+  "event_name": "2026-03-21 | Bruins vs Canadiens",
+  "generated_at": "March 23, 2026 at 05:58 PM",
+  "status": "Final",
+  "source_columns": [
+    "acct_id",
+    "price_level",
+    "plan_event_name",
+    "num_seats",
+    "plan_type",
+    "section_type",
+    "number_of_events",
+    "full_season_equivalence",
+    "ticket_price",
+    "revenue"
+  ],
+  "topline_metrics": {
+    "unique_accounts": 10,
+    "total_seats": 40,
+    "total_revenue": 9106.0,
+    "weighted_average_ticket_price": 227.65,
+    "total_full_season_equivalence": 21.67,
+    "weighted_average_events": 22.2
+  },
+  "highlights": {
+    "top_plan_type": "Suite",
+    "top_section_type": "Premium",
+    "top_price_level": "Suite Lease"
+  },
+  "data_quality": {
+    "rows_processed": 10,
+    "required_column_coverage": "100%",
+    "revenue_mismatch_count": 0,
+    "missing_required_values": 0,
+    "status": "Final"
+  },
+  "breakdowns": {
+    "plan_type": [
+      {
+        "label": "Suite",
+        "accounts": 1,
+        "seats": 10,
+        "revenue": 4300.0,
+        "average_ticket_price": 430.0,
+        "revenue_share": 0.4722
+      },
+      {
+        "label": "Full Season",
+        "accounts": 2,
+        "seats": 6,
+        "revenue": 1150.0,
+        "average_ticket_price": 191.67,
+        "revenue_share": 0.1263
+      },
+      {
+        "label": "Half Season",
+        "accounts": 1,
+        "seats": 4,
+        "revenue": 980.0,
+        "average_ticket_price": 245.0,
+        "revenue_share": 0.1076
+      },
+      {
+        "label": "10-Game",
+        "accounts": 2,
+        "seats": 4,
+        "revenue": 770.0,
+        "average_ticket_price": 192.5,
+        "revenue_share": 0.0846
+      },
+      {
+        "label": "Mini Plan",
+        "accounts": 1,
+        "seats": 4,
+        "revenue": 620.0,
+        "average_ticket_price": 155.0,
+        "revenue_share": 0.0681
+      },
+      {
+        "label": "Premium Membership",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 590.0,
+        "average_ticket_price": 295.0,
+        "revenue_share": 0.0648
+      },
+      {
+        "label": "Group",
+        "accounts": 1,
+        "seats": 8,
+        "revenue": 576.0,
+        "average_ticket_price": 72.0,
+        "revenue_share": 0.0633
+      },
+      {
+        "label": "Student Rush",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 120.0,
+        "average_ticket_price": 60.0,
+        "revenue_share": 0.0132
+      }
+    ],
+    "section_type": [
+      {
+        "label": "Premium",
+        "accounts": 2,
+        "seats": 12,
+        "revenue": 5090.0,
+        "average_ticket_price": 424.17,
+        "revenue_share": 0.559
+      },
+      {
+        "label": "Club",
+        "accounts": 3,
+        "seats": 8,
+        "revenue": 1980.0,
+        "average_ticket_price": 247.5,
+        "revenue_share": 0.2174
+      },
+      {
+        "label": "Upper Bowl",
+        "accounts": 3,
+        "seats": 14,
+        "revenue": 1056.0,
+        "average_ticket_price": 75.43,
+        "revenue_share": 0.116
+      },
+      {
+        "label": "Lower Bowl",
+        "accounts": 2,
+        "seats": 6,
+        "revenue": 980.0,
+        "average_ticket_price": 163.33,
+        "revenue_share": 0.1076
+      }
+    ],
+    "price_level": [
+      {
+        "label": "Suite Lease",
+        "accounts": 1,
+        "seats": 10,
+        "revenue": 4300.0,
+        "average_ticket_price": 430.0,
+        "revenue_share": 0.4722
+      },
+      {
+        "label": "Club Center",
+        "accounts": 1,
+        "seats": 4,
+        "revenue": 980.0,
+        "average_ticket_price": 245.0,
+        "revenue_share": 0.1076
+      },
+      {
+        "label": "Premium Glass",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 790.0,
+        "average_ticket_price": 395.0,
+        "revenue_share": 0.0868
+      },
+      {
+        "label": "Loge Corner",
+        "accounts": 1,
+        "seats": 4,
+        "revenue": 620.0,
+        "average_ticket_price": 155.0,
+        "revenue_share": 0.0681
+      },
+      {
+        "label": "Club Sideline",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 590.0,
+        "average_ticket_price": 295.0,
+        "revenue_share": 0.0648
+      },
+      {
+        "label": "Balcony Corner",
+        "accounts": 1,
+        "seats": 8,
+        "revenue": 576.0,
+        "average_ticket_price": 72.0,
+        "revenue_share": 0.0633
+      },
+      {
+        "label": "Balcony Center",
+        "accounts": 2,
+        "seats": 6,
+        "revenue": 480.0,
+        "average_ticket_price": 80.0,
+        "revenue_share": 0.0527
+      },
+      {
+        "label": "Club Corner",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 410.0,
+        "average_ticket_price": 205.0,
+        "revenue_share": 0.045
+      },
+      {
+        "label": "Loge Attack",
+        "accounts": 1,
+        "seats": 2,
+        "revenue": 360.0,
+        "average_ticket_price": 180.0,
+        "revenue_share": 0.0395
+      }
+    ]
+  }
+}
